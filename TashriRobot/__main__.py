@@ -101,13 +101,6 @@ PM_START_TEXT = """
 
 buttons = [
     [
-                                    
-                                   
-                                                                   
-                                                                                 
-                                    
-       
-     
         InlineKeyboardButton(
             text="🎈α∂∂ мє ιη уσυ ¢нαт🎈",
             url=f"https://t.me/{dispatcher.bot.username}?startgroup=true",
@@ -255,10 +248,6 @@ def start(update: Update, context: CallbackContext):
             )
             time.sleep(0.4)
             lol.edit_text("𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠😘")
-                           
-                                
-                           
-                                                     
             time.sleep(0.4)
             lol.edit_text("𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠😘😘")
             time.sleep(0.4)
@@ -423,51 +412,8 @@ def Tashri_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                                    
-                                   
-                                                                   
-                                                                                 
-                                    
-       
-                     
-                                             
-                                                                                         
-                          
-                                             
-                                                                                        
-                          
-                      
-                     
                         InlineKeyboardButton(
-                                                                                                       
-                          
-                                             
                             text="🥀ᴅᴇᴠᴇʟᴏᴩᴇʀ🥀", url=f"https://t.me/Tashri2342"
-                                                    
-                          
-                      
-                     
-                                                                                      
-                      
-                 
-              
-         
-                                        
-                                                                                                                                  
-                                                                                                                                                                                 
-                                          
-                                              
-                 
-                     
-                                    
-                                   
-                                                                   
-                                                                                 
-                                    
-       
-                     
-                                             
-                                                                                              
                         ),
                         InlineKeyboardButton(
                             text="✨𝐑𝐄𝐏𝐎✨", 
@@ -500,17 +446,11 @@ def Music_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "Music_":
         query.message.edit_text(f"""**👀𝐇𝐞𝐲 𝐁𝐚𝐛𝐲[.](https://te.legra.ph/file/74469cbd275fc6573546e.jpg) 🖤\n\n🌺𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 {dispatcher.bot.first_name} 🍷\n\n🌹𝐈 𝐀𝐦 𝐀𝐧 📀 𝐀𝐝𝐯𝐚𝐧𝐜𝐞𝐝 🎭 𝐀𝐧𝐝 🌱 𝐒𝐮𝐩𝐞𝐫𝐟𝐚𝐬𝐭 🌼 𝐕𝐂 🍄 𝐏𝐥𝐚𝐲𝐞𝐫 📣 𝐖𝐢𝐭𝐡 🕙 24𝐱7 🌀 𝐀𝐜𝐭𝐢𝐯𝐞 » 𝐅𝐨𝐫 🗨️ 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 ♨️ 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🎸 𝐀𝐧𝐝 🏓 𝐆𝐫𝐨𝐮𝐩𝐬 🎻\n\n💐𝐅𝐞𝐞𝐥 😍 𝐋𝐚𝐠 📍 𝐅𝐫𝐞𝐞 😇 𝐓𝐨 🕊️ 𝐀𝐝𝐝 𝐌𝐞 𝐈𝐧 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩 🤖 𝐀𝐧𝐝 🩸 𝐄𝐧𝐣𝐨𝐲 ❥︎ 𝐒𝐮𝐩𝐞𝐫 💥 𝐇𝐢𝐠𝐡 💫 𝐐𝐮𝐚𝐥𝐢𝐭𝐲 🦞 𝐀𝐮𝐝𝐢𝐨 🎧 𝐀𝐧𝐝 🔊 𝐕𝐢𝐝𝐞𝐨 🌷\n\n ☆............𝙱𝚈 » [Legend](https://t.me/Tashri2342)............☆ 💞**""",
-                                                            
-    
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                                                                                                               
-                                                                                            
-                      
-                     
                         
                 InlineKeyboardButton(
                     text="🍁αԃɱιɳ🍁",
@@ -571,9 +511,7 @@ def Music_about_callback(update: Update, context: CallbackContext):
             ],
                     [
                         InlineKeyboardButton(text="♥️ вαϲк ♥️", callback_data="Tashri_back"),
-                                                                                                             
                     ],
-                                                                                                  
                 ]
            ),
         )
@@ -582,13 +520,6 @@ def Music_about_callback(update: Update, context: CallbackContext):
             text=f"*» 💜ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ💜 «*"
             f"""
 
-                                                         
-                                                             
-                                                                                                                              
-                                                                                                                  
-                                                                                                            
-                                                                                                                                    
-                                          
 
 ᴊᴜsᴛ ᴀᴅᴅ ᴄ ɪɴ ᴛʜᴇ sᴛᴀʀᴛɪɴɢ ᴏғ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅs ᴛᴏ ᴜsᴇ ᴛʜᴇᴍ ғᴏʀ ᴄʜᴀɴɴᴇʟ.
 
@@ -622,17 +553,10 @@ def Music_about_callback(update: Update, context: CallbackContext):
             f"""
 
 ᴀᴜᴛʜ ᴜsᴇʀs ᴄᴀɴ ᴜsᴇ ᴀᴅᴍɪɴ ʀɪɢʜᴛs ɪɴ ᴛʜᴇ ʙᴏᴛ ᴡɪᴛʜᴏᴜᴛ ᴀᴅᴍɪɴ ʀɪɢʜᴛs ɪɴ ᴛʜᴇ ᴄʜᴀᴛ. [ᴀᴅᴍɪɴs ᴏɴʟʏ]
-                                       
-                                                  
 
 /auth [ᴜsᴇʀɴᴀᴍᴇ] : ᴀᴅᴅ ᴀ ᴜsᴇʀ ᴛᴏ ᴀᴜᴛʜ ʟɪsᴛ ᴏғ ᴛʜᴇ ʙᴏᴛ.
-                                            
 
 /unauth [ᴜsᴇʀɴᴀᴍᴇ] : ʀᴇᴍᴏᴠᴇ ᴀ ᴀᴜᴛʜ ᴜsᴇʀs ғʀᴏᴍ ᴛʜᴇ ᴀᴜᴛʜ ᴜsᴇʀs ʟɪsᴛ.
-                                                                 
-                                                                   
-                                       
-                                                            
 
 /authusers : sʜᴏᴡs ᴛʜᴇ ᴀᴜᴛʜ ᴜsᴇʀs ʟɪsᴛ ᴏғ ᴛʜᴇ ɢʀᴏᴜᴩ.
 
@@ -654,13 +578,8 @@ def Music_about_callback(update: Update, context: CallbackContext):
             f""" 
 
 ʙʟᴀᴄᴋʟɪsᴛ ғᴇᴀᴛᴜʀᴇ [ᴏɴʟʏ ғᴏʀ sᴜᴅᴏᴇʀs]
-                                                  
-                                                                  
 
 /blacklistchat [ᴄʜᴀᴛ ɪᴅ] : ʙʟᴀᴄᴋʟɪsᴛ ᴀ ᴄʜᴀᴛ ғʀᴏᴍ ᴜsɪɴɢ ᴛʜᴇ ʙᴏᴛ.
-                                                                   
-                                       
-                                              
 
 /whitelistchat [ᴄʜᴀᴛ ɪᴅ] : ᴡʜɪᴛᴇʟɪsᴛ ᴛʜᴇ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴄʜᴀᴛ.
 
@@ -691,14 +610,8 @@ def Music_about_callback(update: Update, context: CallbackContext):
         query.message.edit_text(
             text=f"*» 💜ʙʀᴏᴀᴅᴄᴀsᴛ ғᴇᴀᴛᴜʀᴇ💜 «*"
             f"""
-                                     
-                                          
 
 /broadcast , /gcast  [ᴍᴇssᴀɢᴇ ᴏʀ ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ] : ʙʀᴏᴀᴅᴄᴀsᴛ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ sᴇʀᴠᴇᴅ ᴄʜᴀᴛs ᴏғ ᴛʜᴇ ʙᴏᴛ.
-                                                                     
-                                                                     
-                                                            
-                                                                    
 
 ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ ᴍᴏᴅᴇs:
 
@@ -739,31 +652,19 @@ def Music_about_callback(update: Update, context: CallbackContext):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                                    
-                                   
-                                                                   
-                                                                                 
-                                    
-       
                     [
                         InlineKeyboardButton(text="♥️ вαϲк ♥️", callback_data="Music_"),
                     ]
                 ]
             ),
         )
-                                                                    
-                                 
     elif query.data == "Music_6":
         query.message.edit_text(
             text=f"*» 💜𝙻𝚈𝚁𝙸𝙲𝚂 & 𝚂𝙷𝙰𝚈𝚁𝙸 𝙵𝙴𝙰𝚃𝚄𝚁𝙴𝚂💜 «*"
             f"""
-                         
-                                                      
 
 /loop [ᴅɪsᴀʙʟᴇ/ᴇɴᴀʙʟᴇ] ᴏʀ [ʙᴇᴛᴡᴇᴇɴ 1:10] 
 : ᴡʜᴇɴ ᴀᴄᴛɪᴠᴀᴛᴇᴅ ʙᴏᴛ ᴡɪʟʟ ᴩʟᴀʏ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ ɪɴ ʟᴏᴏᴩ ғᴏʀ 10 ᴛɪᴍᴇs ᴏʀ ᴛʜᴇ ɴᴜᴍʙᴇʀ ᴏғ ʀᴇǫᴜᴇsᴛᴇᴅ ʟᴏᴏᴩs.
-                                                                                                            
-                                                                                                      
 
 /shuffle : sʜᴜғғʟᴇ ᴛʜᴇ ǫᴜᴇᴜᴇᴅ ᴛʀᴀᴄᴋs.
 
@@ -782,25 +683,15 @@ def Music_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                  
-                  
                         InlineKeyboardButton(text="♥️ вαϲк ♥️", callback_data="Music_"),
                     ]
                 ]
-                                                                                 
-                                    
-                                    
             ),
         )
     elif query.data == "Music_7":
-                                                     
         query.message.edit_text(
             text=f"*» 💜ᴩʟᴀʏʟɪsᴛs ғᴇᴀᴛᴜʀᴇ💜 «*"
             f"""
-                                          
-                       
-                                          
-         
 
 /playlist : ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴩʟᴀʏʟɪsᴛ ᴏɴ sᴇʀᴠᴇʀs.
 
@@ -815,28 +706,6 @@ def Music_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                                    
-                                   
-                                                                   
-                                                                                 
-                                    
-       
-                     
-                                             
-                                                                                     
-                          
-                                             
-                                                                                 
-                          
-                      
-                     
-                                                                                                 
-                                             
-                                                        
-                                                        
-                          
-                      
-                     
                         InlineKeyboardButton(text="♥️ вαϲк ♥️", callback_data="Music_"),
                     ]
                 ]
@@ -846,17 +715,10 @@ def Music_about_callback(update: Update, context: CallbackContext):
         query.message.edit_text(
             text=f"*» 💜 ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛs 💜 «*"
             f"""
-                                                  
 
 /activevoice : sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇᴄʜᴀᴛs ᴏɴ ᴛʜᴇ ʙᴏᴛ.
 /activevideo : sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛs ᴏɴ ʙᴏᴛ.
 /autoend [ᴇɴᴀʙʟᴇ|ᴅɪsᴀʙʟᴇ] : ᴇɴᴀʙʟᴇ sᴛʀᴇᴀᴍ ᴀᴜᴛᴏ ᴇɴᴅ ɪғ ɴᴏ ᴏɴᴇ ɪs ʟɪsᴛᴇɴɪɴɢ.
-
-                                                                                                                      
-
-                                                                     
-
-                                          
 
 💜............𝙱𝚈 » [Tashri](https://t.me/Tashri2342)............💜
 """,
@@ -874,7 +736,6 @@ def Music_about_callback(update: Update, context: CallbackContext):
         query.message.edit_text(
             text=f"*» 💜 ᴩʟᴀʏ ғᴇᴀᴛᴜʀᴇ 💜 «*"
             f"""
-                                                                                                                     
 
 •c sᴛᴀɴᴅs ғᴏʀ ᴄʜᴀɴɴᴇʟ ᴩʟᴀʏ.
 •v sᴛᴀɴᴅs ғᴏʀ ᴠɪᴅᴇᴏ ᴩʟᴀʏ.
@@ -887,8 +748,6 @@ def Music_about_callback(update: Update, context: CallbackContext):
 /channelplay [ᴄʜᴀᴛ ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ɪᴅ] ᴏʀ [ᴅɪsᴀʙʟᴇ] : ᴄᴏɴɴᴇᴄᴛ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴀ ɢʀᴏᴜᴩ ᴀɴᴅ sᴛᴀʀᴛs sᴛʀᴇᴀᴍɪɴɢ ᴛʀᴀᴄᴋs ʙʏ ᴛʜᴇ ʜᴇʟᴩ ᴏғ ᴄᴏᴍᴍᴀɴᴅs sᴇɴᴛ ɪɴ ɢʀᴏᴜᴩ.
 
 💜............𝙱𝚈 » [Tashri](https://t.me/Tashri2342)............💜
-                                                        
-                                                            
 """,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -904,7 +763,6 @@ def Music_about_callback(update: Update, context: CallbackContext):
         query.message.edit_text(
             text=f"*» 💜ɢᴇᴛ sᴛᴀʀᴛᴇᴅ ᴡɪᴛʜ ʙᴏᴛ💜 «*"
             f"""
-                                                                                                                        
 
 🥶 ʜᴇʀᴏᴋᴜ :
 
@@ -941,9 +799,6 @@ def Music_about_callback(update: Update, context: CallbackContext):
         query.message.edit_text(
             text=f"*» 💜ɢᴇᴛ sᴛᴀʀᴛᴇᴅ ᴡɪᴛʜ ʙᴏᴛ💜 «*"
             f"""
-                                                          
-                                                                                                               
-                                                            
 
 /start : sᴛᴀʀᴛs ᴛʜᴇ ᴍᴜsɪᴄ ʙᴏᴛ.
 
@@ -1272,7 +1127,6 @@ def main():
   ♨️𝗠𝗔𝗗𝗘 𝗕𝗬 [Tashri](https://t.me/Tashri2342)♨️
   
 ╚═════ஜ۩۞۩ஜ═════╝
-                                       
 """,reply_markup=x,
                 parse_mode=ParseMode.MARKDOWN,
             )
@@ -1296,19 +1150,13 @@ def main():
 
     about_callback_handler = CallbackQueryHandler(
         Tashri_about_callback, pattern=r"Tashri_", run_async=True
-     
-                                                   
-                                                                 
     )
     Music_callback_handler = CallbackQueryHandler(
         Music_about_callback, pattern=r"Music_",run_async=True
     )
 
-                                                                     
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
-
-    # dispatcher.add_handler(test_handler)
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(about_callback_handler)
@@ -1318,11 +1166,7 @@ def main():
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
     dispatcher.add_handler(donate_handler)
-    dispatcher.add_handler(TashriRobot_main_handler)
     dispatcher.add_error_handler(error_callback)
-                                                   
-                                      
-                                                                                
 
     LOGGER.info("🌱𝐓𝐚𝐬𝐡𝐫𝐢𝐁𝐎𝐓🌷𝐒𝐓𝐀𝐑𝐓𝐄𝐃🌺𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐅𝐔𝐋𝐋𝐔🌱\n\n╔═════ஜ۩۞۩ஜ════╗\n\n♨️𝗠𝗔𝗗𝗘 𝗕𝗬 𝐓𝐚𝐬𝐡𝐫𝐢♨️\n\n╚═════ஜ۩۞۩ஜ════╝")
     updater.start_polling(timeout=15, read_latency=4, clean=True)
