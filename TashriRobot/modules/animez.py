@@ -177,7 +177,6 @@ def extract_arg(message: Message):
     return None
 
 
-@run_async
 def airing(update: Update, context: CallbackContext):
     message = update.effective_message
     search_str = extract_arg(message)
