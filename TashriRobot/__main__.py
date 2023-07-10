@@ -389,7 +389,6 @@ def help_button(update, context):
         pass
 
 
-@run_async
 def Tashri_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "Tashri_":
