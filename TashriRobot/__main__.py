@@ -422,7 +422,7 @@ def Tashri_about_callback(update: Update, context: CallbackContext):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                     
+                    [
                                     
                                    
                                                                    
@@ -438,11 +438,11 @@ def Tashri_about_callback(update: Update, context: CallbackContext):
                           
                       
                      
-                                             
+                        InlineKeyboardButton(
                                                                                                        
                           
                                              
-                                                       
+                            text="🥀ᴅᴇᴠᴇʟᴏᴩᴇʀ🥀", url=f"https://t.me/Tashri2342"
                                                     
                           
                       
@@ -458,7 +458,7 @@ def Tashri_about_callback(update: Update, context: CallbackContext):
                                           
                                               
                  
-                    [
+                     
                                     
                                    
                                                                    
@@ -466,8 +466,8 @@ def Tashri_about_callback(update: Update, context: CallbackContext):
                                     
        
                      
-                        InlineKeyboardButton(
-                            text="🥀ᴅᴇᴠᴇʟᴏᴩᴇʀ🥀", url=f"https://t.me/Tashri2342"
+                                             
+                                                                                              
                         ),
                         InlineKeyboardButton(
                             text="✨𝐑𝐄𝐏𝐎✨", 
@@ -848,11 +848,11 @@ def Music_about_callback(update: Update, context: CallbackContext):
             f"""
                                                   
 
-                                          
-
 /activevoice : sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇᴄʜᴀᴛs ᴏɴ ᴛʜᴇ ʙᴏᴛ.
 /activevideo : sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛs ᴏɴ ʙᴏᴛ.
 /autoend [ᴇɴᴀʙʟᴇ|ᴅɪsᴀʙʟᴇ] : ᴇɴᴀʙʟᴇ sᴛʀᴇᴀᴍ ᴀᴜᴛᴏ ᴇɴᴅ ɪғ ɴᴏ ᴏɴᴇ ɪs ʟɪsᴛᴇɴɪɴɢ.
+
+                                                                                                                      
 
                                                                      
 
@@ -1283,9 +1283,6 @@ def main():
         except BadRequest as e:
             LOGGER.warning(e.message)
     start_handler = CommandHandler("start", start, run_async=True)
-
-    CommandHandler("test", test)
-    start_handler = CommandHandler("start", start)
 
     help_handler = CommandHandler("help", get_help, run_async=True)
     help_callback_handler = CallbackQueryHandler(
