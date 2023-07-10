@@ -1,7 +1,7 @@
 import html
 import os
 
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
+from telegram import ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.utils.helpers import mention_html
@@ -402,17 +402,6 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
                 "» sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ, ᴍᴀʏʙᴇ sᴏᴍᴇᴏɴᴇ ᴩʀᴏᴍᴏᴛᴇᴅ ᴛʜᴀᴛ ᴜsᴇʀ ʙᴇғᴏʀᴇ ᴍᴇ."
             )
         return
-
-    keyboard = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton(
-                    "↻ ᴅᴇᴍᴏᴛᴇ ↺",
-                    callback_data="demote_({})".format(user_member.user.id),
-                )
-            ]
-        ]
-    )
 
     bot.sendMessage(
         chat.id,
@@ -913,63 +902,6 @@ async def listbots(client, message):
         await asyncio.sleep(e.value)
 
 
-@bot_admin
-@can_promote
-@user_admin
-@loggable
-def button(update: Update, context: CallbackContext) -> str:
-    query: Optional[CallbackQuery] = update.callback_query
-    user: Optional[User] = update.effective_user
-    bot: Optional[Bot] = context.bot
-    match = re.match(r"demote_\((.+?)\)", query.data)
-    if match:
-        user_id = match.group(1)
-        chat: Optional[Chat] = update.effective_chat
-        member = chat.get_member(user_id)
-        bot_member = chat.get_member(bot.id)
-        bot_permissions = promoteChatMember(
-            chat.id,
-            user_id,
-            can_change_info=bot_member.can_change_info,
-            can_post_messages=bot_member.can_post_messages,
-            can_edit_messages=bot_member.can_edit_messages,
-            can_delete_messages=bot_member.can_delete_messages,
-            can_invite_users=bot_member.can_invite_users,
-            can_promote_members=bot_member.can_promote_members,
-            can_restrict_members=bot_member.can_restrict_members,
-            can_pin_messages=bot_member.can_pin_messages,
-            can_manage_voice_chats=bot_member.can_manage_voice_chats,
-        )
-        demoted = bot.promoteChatMember(
-            chat.id,
-            user_id,
-            can_change_info=False,
-            can_post_messages=False,
-            can_edit_messages=False,
-            can_delete_messages=False,
-            can_invite_users=False,
-            can_restrict_members=False,
-            can_pin_messages=False,
-            can_promote_members=False,
-            can_manage_voice_chats=False,
-        )
-        if demoted:
-            update.effective_message.edit_text(
-                f"ᴅᴇᴍᴏᴛᴇʀ : {mention_html(user.id, user.first_name)}\nᴜsᴇʀ : {mention_html(member.user.id, member.user.first_name)}!",
-                parse_mode=ParseMode.HTML,
-            )
-            query.answer("ᴅᴇᴍᴏᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ 😟!")
-            return (
-                f"<b>{html.escape(chat.title)}:</b>\n"
-                f"#DEMOTE\n"
-                f"<b>ᴅᴇᴍᴏᴛᴇʀ :</b> {mention_html(user.id, user.first_name)}\n"
-                f"<b>ᴜsᴇʀ :</b> {mention_html(member.user.id, member.user.first_name)}"
-            )
-    else:
-        update.effective_message.edit_text(
-            "» ғᴀɪʟᴇᴅ ᴛᴏ ᴅᴇᴍᴏᴛᴇ, ᴍᴀʏʙᴇ ᴛʜᴀᴛ ᴜsᴇʀ ɪs ɴᴏᴛ ᴀɴ ᴀᴅᴍɪɴ ᴏʀ ᴍᴀʏʙᴇ ʟᴇғᴛ ᴛʜᴇ ɢʀᴏᴜᴩ !"
-        )
-        return ""
 
 
 __help__ = """
