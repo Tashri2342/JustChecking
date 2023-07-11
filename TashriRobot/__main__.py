@@ -1,5 +1,4 @@
 import importlib
-from operator import attrgetter
 import re
 import os
 import time
@@ -163,8 +162,6 @@ DATA_EXPORT = []
 CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
-# Sort the module names alphabetically
-ALL_MODULES.sort(key=attrgetter('__name__'))
 for module_name in ALL_MODULES:
     imported_module = importlib.import_module("TashriRobot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
