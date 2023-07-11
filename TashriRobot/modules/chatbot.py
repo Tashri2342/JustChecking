@@ -142,7 +142,7 @@ def chatbot(update: Update, context: CallbackContext):
         if response:
             message.reply_text(response)
         else:
-            message.reply_text("I'm sorry, I couldn't generate a response.")
+            message.reply_text("I'm sorry, Mere baap @Tashri2342 na ya sab nhi sikhaya h moko.")
 
 
 
