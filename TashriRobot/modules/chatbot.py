@@ -19,6 +19,7 @@ from telegram.ext import (
     CommandHandler,
     Filters,
     MessageHandler,
+              
 )
 from telegram.utils.helpers import mention_html
 
@@ -28,6 +29,7 @@ from TashriRobot.modules.helper_funcs.chat_status import user_admin, user_admin_
 from TashriRobot.modules.log_channel import gloggable
 
 
+          
 @user_admin_no_reply
 @gloggable
 def fallenrm(update: Update, context: CallbackContext) -> str:
@@ -56,6 +58,7 @@ def fallenrm(update: Update, context: CallbackContext) -> str:
     return ""
 
 
+          
 @user_admin_no_reply
 @gloggable
 def fallenadd(update: Update, context: CallbackContext) -> str:
@@ -84,6 +87,7 @@ def fallenadd(update: Update, context: CallbackContext) -> str:
     return ""
 
 
+          
 @user_admin
 @gloggable
 def fallen(update: Update, context: CallbackContext):
@@ -92,8 +96,8 @@ def fallen(update: Update, context: CallbackContext):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton(text="ᴇɴᴀʙʟᴇ", callback_data="add_chat({})"),
-                InlineKeyboardButton(text="ᴅɪsᴀʙʟᴇ", callback_data="rm_chat({})"),
+                InlineKeyboardButton(text="📍ᴇɴᴀʙʟᴇ📍", callback_data="add_chat({})"),
+                InlineKeyboardButton(text="📍ᴅɪsᴀʙʟᴇ📍", callback_data="rm_chat({})"),
             ],
         ]
     )
@@ -138,14 +142,14 @@ def chatbot(update: Update, context: CallbackContext):
 
 
 __help__ = f"""
-*{BOT_NAME} ʜᴀs ᴀɴ ᴄʜᴀᴛʙᴏᴛ ᴡʜɪᴄʜ ᴘʀᴏᴠɪᴅᴇs ʏᴏᴜ ᴀ sᴇᴇᴍɪɴɢʟᴇss ᴄʜᴀᴛᴛɪɴɢ ᴇxᴘᴇʀɪᴇɴᴄᴇ :**
+*{BOT_NAME} ʜᴀs ᴀɴ ᴄʜᴀᴛʙᴏᴛ ᴡʜɪᴄʜ ᴘʀᴏᴠɪᴅᴇs ʏᴏᴜ ᴀ sᴇᴇᴍɪɴɢʟᴇss ᴄʜᴀᴛᴛɪɴɢ ᴇxᴘᴇʀɪᴇɴᴄᴇ :*
 
- »  /ᴄʜᴀᴛʙᴏᴛ *:* sʜᴏᴡs ᴄʜᴀᴛʙᴏᴛ ᴄᴏɴᴛʀᴏʟ ᴘᴀɴᴇʟ
+ »  /chatbot *:* sʜᴏᴡs ᴄʜᴀᴛʙᴏᴛ ᴄᴏɴᴛʀᴏʟ ᴘᴀɴᴇʟ
 
-                                      
+☆............𝙱𝚈 » [Tashri](https://t.me/Tashri2342)............☆
 """
 
-__mod_name__ = "Cʜᴀᴛʙᴏᴛ"
+__mod_name__ = "♨️Cʜᴀᴛʙᴏᴛ♨️"
 
 
 CHATBOTK_HANDLER = CommandHandler("chatbot", fallen, run_async=True)
@@ -168,4 +172,4 @@ __handlers__ = [
     CHATBOTK_HANDLER,
     RM_CHAT_HANDLER,
     CHATBOT_HANDLER,
-        ]
+]
