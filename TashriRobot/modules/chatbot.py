@@ -138,7 +138,12 @@ def chatbot(update: Update, context: CallbackContext):
         )
         results = json.loads(request.text)
         sleep(0.5)
-        message.reply_text(results["response"])
+        response = results.get("response")
+        if response:
+            message.reply_text(response)
+        else:
+            message.reply_text("I'm sorry, I couldn't generate a response.")
+
 
 
 __help__ = f"""
