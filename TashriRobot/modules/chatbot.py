@@ -1,180 +1,191 @@
-import html
-import json
-import re
-from time import sleep
+# import html
+# import json
+# import re
+# from time import sleep
 
-import requests
-from telegram import (
-    CallbackQuery,
-    Chat,
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    ParseMode,
-    Update,
-    User,
-)
-from telegram.ext import (
-    CallbackContext,
-    CallbackQueryHandler,
-    CommandHandler,
-    Filters,
-    MessageHandler,
+# import requests
+# from telegram import (
+    # CallbackQuery,
+    # Chat,
+    # InlineKeyboardButton,
+    # InlineKeyboardMarkup,
+    # ParseMode,
+    # Update,
+    # User,
+# )
+# from telegram.ext import (
+    # CallbackContext,
+    # CallbackQueryHandler,
+    # CommandHandler,
+    # Filters,
+    # MessageHandler,
               
-)
-from telegram.utils.helpers import mention_html
+# )
+# from telegram.utils.helpers import mention_html
 
-import TashriRobot.modules.sql.chatbot_sql as sql
-from TashriRobot import BOT_ID, BOT_NAME, BOT_USERNAME, dispatcher
-from TashriRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from TashriRobot.modules.log_channel import gloggable
-
-
-          
-@user_admin_no_reply
-@gloggable
-def fallenrm(update: Update, context: CallbackContext) -> str:
-    query: Optional[CallbackQuery] = update.callback_query
-    user: Optional[User] = update.effective_user
-    match = re.match(r"rm_chat\((.+?)\)", query.data)
-    if match:
-        user_id = match.group(1)
-        chat: Optional[Chat] = update.effective_chat
-        is_fallen = sql.set_fallen(chat.id)
-        if is_fallen:
-            is_fallen = sql.set_fallen(user_id)
-            return (
-                f"<b>{html.escape(chat.title)}:</b>\n"
-                f"AI_DISABLED\n"
-                f"<b>Admin :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-            )
-        else:
-            update.effective_message.edit_text(
-                "{} ᴄʜᴀᴛʙᴏᴛ ᴅɪsᴀʙʟᴇᴅ ʙʏ {}.".format(
-                    dispatcher.bot.first_name, mention_html(user.id, user.first_name)
-                ),
-                parse_mode=ParseMode.HTML,
-            )
-
-    return ""
+# import TashriRobot.modules.sql.chatbot_sql as sql
+# from TashriRobot import BOT_ID, BOT_NAME, BOT_USERNAME, dispatcher
+# from TashriRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
+# from TashriRobot.modules.log_channel import gloggable
 
 
           
-@user_admin_no_reply
-@gloggable
-def fallenadd(update: Update, context: CallbackContext) -> str:
-    query: Optional[CallbackQuery] = update.callback_query
-    user: Optional[User] = update.effective_user
-    match = re.match(r"add_chat\((.+?)\)", query.data)
-    if match:
-        user_id = match.group(1)
-        chat: Optional[Chat] = update.effective_chat
-        is_fallen = sql.rem_fallen(chat.id)
-        if is_fallen:
-            is_fallen = sql.rem_fallen(user_id)
-            return (
-                f"<b>{html.escape(chat.title)}:</b>\n"
-                f"AI_ENABLE\n"
-                f"<b>Admin :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-            )
-        else:
-            update.effective_message.edit_text(
-                "{} ᴄʜᴀᴛʙᴏᴛ ᴇɴᴀʙʟᴇᴅ ʙʏ {}.".format(
-                    dispatcher.bot.first_name, mention_html(user.id, user.first_name)
-                ),
-                parse_mode=ParseMode.HTML,
-            )
+# @user_admin_no_reply
+# @gloggable
+# def fallenrm(update: Update, context: CallbackContext) -> str:
+    # query: Optional[CallbackQuery] = update.callback_query
+    # user: Optional[User] = update.effective_user
+    # match = re.match(r"rm_chat\((.+?)\)", query.data)
+    # if match:
+        # user_id = match.group(1)
+        # chat: Optional[Chat] = update.effective_chat
+        # is_fallen = sql.set_fallen(chat.id)
+        # if is_fallen:
+            # is_fallen = sql.set_fallen(user_id)
+            # return (
+                # f"<b>{html.escape(chat.title)}:</b>\n"
+                # f"AI_DISABLED\n"
+                # f"<b>Admin :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+            # )
+        # else:
+            # update.effective_message.edit_text(
+                # "{} ᴄʜᴀᴛʙᴏᴛ ᴅɪsᴀʙʟᴇᴅ ʙʏ {}.".format(
+                    # dispatcher.bot.first_name, mention_html(user.id, user.first_name)
+                # ),
+                # parse_mode=ParseMode.HTML,
+            # )
 
-    return ""
+    # return ""
 
 
           
-@user_admin
-@gloggable
-def fallen(update: Update, context: CallbackContext):
-    message = update.effective_message
-    msg = "• ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴩᴛɪᴏɴ ᴛᴏ ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ"
-    keyboard = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton(text="📍ᴇɴᴀʙʟᴇ📍", callback_data="add_chat({})"),
-                InlineKeyboardButton(text="📍ᴅɪsᴀʙʟᴇ📍", callback_data="rm_chat({})"),
-            ],
-        ]
-    )
-    message.reply_text(
-        text=msg,
-        reply_markup=keyboard,
-        parse_mode=ParseMode.HTML,
-    )
+# @user_admin_no_reply
+# @gloggable
+# def fallenadd(update: Update, context: CallbackContext) -> str:
+    # query: Optional[CallbackQuery] = update.callback_query
+    # user: Optional[User] = update.effective_user
+    # match = re.match(r"add_chat\((.+?)\)", query.data)
+    # if match:
+        # user_id = match.group(1)
+        # chat: Optional[Chat] = update.effective_chat
+        # is_fallen = sql.rem_fallen(chat.id)
+        # if is_fallen:
+            # is_fallen = sql.rem_fallen(user_id)
+            # return (
+                # f"<b>{html.escape(chat.title)}:</b>\n"
+                # f"AI_ENABLE\n"
+                # f"<b>Admin :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+            # )
+        # else:
+            # update.effective_message.edit_text(
+                # "{} ᴄʜᴀᴛʙᴏᴛ ᴇɴᴀʙʟᴇᴅ ʙʏ {}.".format(
+                    # dispatcher.bot.first_name, mention_html(user.id, user.first_name)
+                # ),
+                # parse_mode=ParseMode.HTML,
+            # )
+
+    # return ""
 
 
-def fallen_message(context: CallbackContext, message):
-    reply_message = message.reply_to_message
-    if message.text.lower() == "fallen":
-        return True
-    elif BOT_USERNAME in message.text.upper():
-        return True
-    elif reply_message:
-        if reply_message.from_user.id == BOT_ID:
-            return True
-    else:
-        return False
+          
+# @user_admin
+# @gloggable
+# def fallen(update: Update, context: CallbackContext):
+    # message = update.effective_message
+    # msg = "• ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴩᴛɪᴏɴ ᴛᴏ ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ"
+    # keyboard = InlineKeyboardMarkup(
+        # [
+            # [
+                # InlineKeyboardButton(text="📍ᴇɴᴀʙʟᴇ📍", callback_data="add_chat({})"),
+                # InlineKeyboardButton(text="📍ᴅɪsᴀʙʟᴇ📍", callback_data="rm_chat({})"),
+            # ],
+        # ]
+    # )
+    # message.reply_text(
+        # text=msg,
+        # reply_markup=keyboard,
+        # parse_mode=ParseMode.HTML,
+    # )
 
 
-def chatbot(update: Update, context: CallbackContext):
-    message = update.effective_message
-    chat_id = update.effective_chat.id
-    bot = context.bot
-    is_fallen = sql.is_fallen(chat_id)
-    if is_fallen:
-        return
-
-    if message.text and not message.document:
-        if not fallen_message(context, message):
-            return
-        bot.send_chat_action(chat_id, action="typing")
-        request = requests.get(
-            f"https://fallenxbot.vercel.app/api/apikey=6126200262-fallen-wfzo44ozfw/fallen/Anonymous/message={message.text}"
-        )
-        results = json.loads(request.text)
-        sleep(0.5)
-        response = results.get("reply")
-        if response:
-            message.reply_text(response)
-        else:
-            message.reply_text("I'm sorry, Mere baap @Tashri2342 na ya sab nhi sikhaya h moko.")
+# def fallen_message(context: CallbackContext, message):
+    # reply_message = message.reply_to_message
+    # if message.text.lower() == "fallen":
+        # return True
+    # elif BOT_USERNAME in message.text.upper():
+        # return True
+    # elif reply_message:
+        # if reply_message.from_user.id == BOT_ID:
+            # return True
+    # else:
+        # return False
 
 
+# def chatbot(update: Update, context: CallbackContext):
+    # message = update.effective_message
+    # chat_id = update.effective_chat.id
+    # bot = context.bot
+    # is_fallen = sql.is_fallen(chat_id)
+    # if is_fallen:
+        # return
 
-__help__ = f"""
-*{BOT_NAME} ʜᴀs ᴀɴ ᴄʜᴀᴛʙᴏᴛ ᴡʜɪᴄʜ ᴘʀᴏᴠɪᴅᴇs ʏᴏᴜ ᴀ sᴇᴇᴍɪɴɢʟᴇss ᴄʜᴀᴛᴛɪɴɢ ᴇxᴘᴇʀɪᴇɴᴄᴇ :*
+    # if message.text and not message.document:
+        # if not fallen_message(context, message):
+            # return
+        # bot.send_chat_action(chat_id, action="typing")
+        # if "Tera baap Kon" in text:
+            # message.reply_text("Mera Baap @Tashri2342 hai")
+        # elif "Who is you father?" in text:
+            # message.reply_text("My father is @Tashri2342.")
+        # elif "Prerna" in text:
+            # message.reply_text("Hay Kis sunderi kaa naam le diya")
+        # elif "Tashri" in text:
+            # message.reply_text("He is my god. Mujha banna bala bahi hai")
+        # elif "Radhe" in text:
+            # message.reply_text("Radhe Radhe!")
+        # else:
+        # request = requests.get(
+            # f"https://fallenxbot.vercel.app/api/apikey=6126200262-fallen-wfzo44ozfw/fallen/Anonymous/message={message.text}"
+        # )
+        # results = json.loads(request.text)
+        # sleep(0.5)
+        # response = results.get("reply")
+        # if response:
+            # message.reply_text(response)
+        # else:
+            # message.reply_text("I'm sorry, Mere baap @Tashri2342 na ya sab nhi sikhaya h moko.")
 
- »  /chatbot *:* sʜᴏᴡs ᴄʜᴀᴛʙᴏᴛ ᴄᴏɴᴛʀᴏʟ ᴘᴀɴᴇʟ
-
-☆............𝙱𝚈 » [Tashri](https://t.me/Tashri2342)............☆
-"""
-
-__mod_name__ = "♨️Cʜᴀᴛʙᴏᴛ♨️"
 
 
-CHATBOTK_HANDLER = CommandHandler("chatbot", fallen, run_async=True)
-ADD_CHAT_HANDLER = CallbackQueryHandler(fallenadd, pattern=r"add_chat", run_async=True)
-RM_CHAT_HANDLER = CallbackQueryHandler(fallenrm, pattern=r"rm_chat", run_async=True)
-CHATBOT_HANDLER = MessageHandler(
-    Filters.text
-    & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!") & ~Filters.regex(r"^\/")),
-    chatbot,
-    run_async=True,
-)
+# __help__ = f"""
+# *{BOT_NAME} ʜᴀs ᴀɴ ᴄʜᴀᴛʙᴏᴛ ᴡʜɪᴄʜ ᴘʀᴏᴠɪᴅᴇs ʏᴏᴜ ᴀ sᴇᴇᴍɪɴɢʟᴇss ᴄʜᴀᴛᴛɪɴɢ ᴇxᴘᴇʀɪᴇɴᴄᴇ :*
 
-dispatcher.add_handler(ADD_CHAT_HANDLER)
-dispatcher.add_handler(CHATBOTK_HANDLER)
-dispatcher.add_handler(RM_CHAT_HANDLER)
-dispatcher.add_handler(CHATBOT_HANDLER)
+ # »  /chatbot *:* sʜᴏᴡs ᴄʜᴀᴛʙᴏᴛ ᴄᴏɴᴛʀᴏʟ ᴘᴀɴᴇʟ
 
-__handlers__ = [
-    ADD_CHAT_HANDLER,
-    CHATBOTK_HANDLER,
-    RM_CHAT_HANDLER,
-    CHATBOT_HANDLER,
-]
+# ☆............𝙱𝚈 » [Tashri](https://t.me/Tashri2342)............☆
+# """
+
+# __mod_name__ = "♨️Cʜᴀᴛʙᴏᴛ♨️"
+
+
+# CHATBOTK_HANDLER = CommandHandler("chatbot", fallen, run_async=True)
+# ADD_CHAT_HANDLER = CallbackQueryHandler(fallenadd, pattern=r"add_chat", run_async=True)
+# RM_CHAT_HANDLER = CallbackQueryHandler(fallenrm, pattern=r"rm_chat", run_async=True)
+# CHATBOT_HANDLER = MessageHandler(
+    # Filters.text
+    # & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!") & ~Filters.regex(r"^\/")),
+    # chatbot,
+    # run_async=True,
+# )
+
+# dispatcher.add_handler(ADD_CHAT_HANDLER)
+# dispatcher.add_handler(CHATBOTK_HANDLER)
+# dispatcher.add_handler(RM_CHAT_HANDLER)
+# dispatcher.add_handler(CHATBOT_HANDLER)
+
+# __handlers__ = [
+    # ADD_CHAT_HANDLER,
+    # CHATBOTK_HANDLER,
+    # RM_CHAT_HANDLER,
+    # CHATBOT_HANDLER,
+# ]
