@@ -19,7 +19,7 @@ from telegram.ext import (
     CommandHandler,
     Filters,
     MessageHandler,
-              
+			  
 )
 from telegram.utils.helpers import mention_html
 
@@ -29,7 +29,7 @@ from TashriRobot.modules.helper_funcs.chat_status import user_admin, user_admin_
 from TashriRobot.modules.log_channel import gloggable
 
 
-          
+		  
 @user_admin_no_reply
 @gloggable
 def fallenrm(update: Update, context: CallbackContext) -> str:
@@ -58,7 +58,7 @@ def fallenrm(update: Update, context: CallbackContext) -> str:
     return ""
 
 
-          
+		  
 @user_admin_no_reply
 @gloggable
 def fallenadd(update: Update, context: CallbackContext) -> str:
@@ -87,7 +87,7 @@ def fallenadd(update: Update, context: CallbackContext) -> str:
     return ""
 
 
-          
+		  
 @user_admin
 @gloggable
 def fallen(update: Update, context: CallbackContext):
@@ -154,7 +154,7 @@ def chatbot(update: Update, context: CallbackContext):
             if response:
                 message.reply_text(response)
             else:
-			    message.reply_text("I'm sorry, Mere baap @Tashri2342 na ya sab nhi sikhaya h moko.") 
+                message.reply_text("I'm sorry, Mere baap @Tashri2342 na ya sab nhi sikhaya h moko.")
 
 
 
@@ -162,7 +162,7 @@ def chatbot(update: Update, context: CallbackContext):
 __help__ = f"""
 *{BOT_NAME} ʜᴀs ᴀɴ ᴄʜᴀᴛʙᴏᴛ ᴡʜɪᴄʜ ᴘʀᴏᴠɪᴅᴇs ʏᴏᴜ ᴀ sᴇᴇᴍɪɴɢʟᴇss ᴄʜᴀᴛᴛɪɴɢ ᴇxᴘᴇʀɪᴇɴᴄᴇ :*
 
- »  /chatbot *:* sʜᴏᴡs ᴄʜᴀᴛʙᴏᴛ ᴄᴏɴᴛʀᴏʟ ᴘᴀɴᴇʟ
+»  /chatbot *:* sʜᴏᴡs ᴄʜᴀᴛʙᴏᴛ ᴄᴏɴᴛʀᴏʟ ᴘᴀɴᴇʟ
 
 ☆............𝙱𝚈 » [Tashri](https://t.me/Tashri2342)............☆
 """
