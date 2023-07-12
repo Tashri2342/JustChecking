@@ -175,20 +175,19 @@ def unapproveall_btn(update: Update, context: CallbackContext):
             users = [int(i.user_id) for i in approved_users]
             for user_id in users:
                 sql.disapprove(chat.id, user_id)
-
-        if member.status == "administrator":
-            query.answer("Only owner of the chat can do this.📍")
-
-        if member.status == "member":
-            query.answer("You need to be admin to do this.📍")
+            message.edit_text("All users have been unapproved.")
+        elif member.status == "administrator":
+            query.answer("Only the owner of the chat can do this.")
+        else:
+            query.answer("You need to be an admin to do this.")
     elif query.data == "unapproveall_cancel":
         if member.status == "creator" or query.from_user.id in DRAGONS:
-            message.edit_text("Removing of all approved users has been cancelled.📍")
-            return ""
-        if member.status == "administrator":
-            query.answer("Only owner of the chat can do this.📍")
-        if member.status == "member":
-            query.answer("You need to be admin to do this.📍")
+            message.edit_text("The removal of all approved users has been cancelled.")
+        elif member.status == "administrator":
+            query.answer("Only the owner of the chat can do this.")
+        else:
+            query.answer("You need to be an admin to do this.")
+
 
 
 __help__ = """
