@@ -1,4 +1,3 @@
-import requests
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
@@ -14,7 +13,10 @@ async def handwrite(_, message: Message):
             message.chat.id, "`Please wait...,\n\nWriting your text...`"
         )
         API = f"https://api.safone.me/write?text={text}"
-        req = requests.get(API).url
+
+        async with Tashri.http.get(API) as response:
+            req = response.url
+
         caption = f"""
 sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
 
@@ -37,7 +39,10 @@ sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
             message.chat.id, "`Please wait...,\n\nWriting your text...`"
         )
         API = f"https://api.safone.me/write?text={lol}"
-        req = requests.get(API).url
+
+        async with Tashri.http.get(API) as response:
+            req = response.url
+
         caption = f"""
 sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
 
@@ -62,4 +67,3 @@ __help__ = """
 
  ᴡʀɪᴛᴇs ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ ᴏɴ ᴡʜɪᴛᴇ ᴘᴀɢᴇ ᴡɪᴛʜ ᴀ ᴘᴇɴ 🖊
 """
-
