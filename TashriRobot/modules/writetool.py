@@ -1,3 +1,4 @@
+import requests
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
@@ -13,10 +14,7 @@ async def handwrite(_, message: Message):
             message.chat.id, "`Please wait...,\n\nWriting your text...`"
         )
         API = f"https://api.safone.me/write?text={text}"
-
-        async with Tashri.http.get(API) as response:
-            req = response.url
-
+        req = requests.get(API).url
         caption = f"""
 sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
 
@@ -30,7 +28,7 @@ sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
             photo=req,
             caption=caption,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("• ᴛᴇʟᴇɢʀᴀᴩʜ •", url=f"{req}")]]
+                [[InlineKeyboardButton("🍁ᴛᴇʟᴇɢʀᴀᴩʜ🍁", url=f"{req}")]]
             ),
         )
     else:
@@ -39,10 +37,7 @@ sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
             message.chat.id, "`Please wait...,\n\nWriting your text...`"
         )
         API = f"https://api.safone.me/write?text={lol}"
-
-        async with Tashri.http.get(API) as response:
-            req = response.url
-
+        req = requests.get(API).url
         caption = f"""
 sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
 
@@ -56,14 +51,18 @@ sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
             photo=req,
             caption=caption,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("• ᴛᴇʟᴇɢʀᴀᴩʜ •", url=f"{req}")]]
+                [[InlineKeyboardButton("🌷ᴛᴇʟᴇɢʀᴀᴩʜ🌷", url=f"{req}")]]
             ),
         )
 
 
-__mod_name__ = "WʀɪᴛᴇTᴏᴏʟ"
+__mod_name__ = "⚡WʀɪᴛᴇTᴏᴏʟ⚡"
 
 __help__ = """
 
  ᴡʀɪᴛᴇs ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ ᴏɴ ᴡʜɪᴛᴇ ᴘᴀɢᴇ ᴡɪᴛʜ ᴀ ᴘᴇɴ 🖊
-"""
+
+❍ /write <ᴛᴇxᴛ> *:* ᴡʀɪᴛᴇs ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ.
+
+☆............𝙱𝚈 » [Tashri](https://t.me/Tashri2342)............☆
+ """
