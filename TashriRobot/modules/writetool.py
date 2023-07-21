@@ -44,9 +44,9 @@ sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
                 ),
             )
         except Exception as e:
-            await m.edit(f"An error occurred: {e}")
+            await Tashri.send_message(message.chat.id, f"An error occurred: {e}")
     else:
-        await m.edit("An error occurred while processing the request.")
+        await Tashri.send_message(message.chat.id, "An error occurred while processing the request.")
 
 
 __mod_name__ = "WʀɪᴛᴇTᴏᴏʟ"
