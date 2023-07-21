@@ -1,4 +1,5 @@
 import subprocess
+import json
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
@@ -26,23 +27,30 @@ async def handwrite(_, message: Message):
     )
 
     if result.returncode == 0:
-        req = result.stdout.strip()
-        caption = f"""
+        try:
+            response_data = json.loads(result.stdout.strip())
+            image_url = response_data["url"]
+
+            caption = f"""
 sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
 
 ✨ **ᴡʀɪᴛᴛᴇɴ ʙʏ :** [{BOT_NAME}](https://t.me/{BOT_USERNAME})
 🥀 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {message.from_user.mention}
-❄ **ʟɪɴᴋ :** `{req}`
+❄ **ʟɪɴᴋ :** `{image_url}`
 """
-        await m.delete()
-        await Tashri.send_photo(
-            message.chat.id,
-            photo=req,
-            caption=caption,
-            reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("• ᴛᴇʟᴇɢʀᴀᴩʜ •", url=f"{req}")]]
-            ),
-        )
+            await m.delete()
+            await Tashri.send_photo(
+                message.chat.id,
+                photo=image_url,
+                caption=caption,
+                reply_markup=InlineKeyboardMarkup(
+                    [[InlineKeyboardButton("• ᴛᴇʟᴇɢʀᴀᴩʜ •", url=image_url)]]
+                ),
+            )
+        except json.JSONDecodeError:
+            await m.edit("An error occurred while processing the API response.")
+        except KeyError:
+            await m.edit("Image URL not found in the API response.")
     else:
         await m.edit("An error occurred while processing the request.")
 
