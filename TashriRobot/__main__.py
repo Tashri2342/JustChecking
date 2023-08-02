@@ -26,6 +26,7 @@ from telegram.ext import (
 from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 from telethon import __version__ as tlhver
+from TashriRobot import pbot
 
 import TashriRobot.modules.no_sql.users_db as sql
 from TashriRobot import (
