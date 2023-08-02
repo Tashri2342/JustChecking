@@ -75,7 +75,10 @@ async def fake_comment(client, message):
 
     args = str(remove_emoji(args))
     eris = await message.reply("🌚")
-    u = pbot.get_me().username if pbot.get_me().username else pbot.get_me().first_name
+    me = await pbot.get_me()
+    u = me.username if me.username else me.first_name
+
+
 
     if message.reply_to_message:
         r = message.reply_to_message
