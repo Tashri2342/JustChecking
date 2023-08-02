@@ -86,7 +86,9 @@ async def fake_comment(client, message):
 
     if not os.path.exists("ph_font.TTF"):
         await pbot.download_media(
-            await pbot.get_messages("e3ris_db", ids=5903)
+            messages = await pbot.get_history("e3ris_db", limit=1, offset_id=5903)
+            if messages:
+                message_to_edit = messages[0]
         )
     if not os.path.exists(dl):
         get = await pbot.get_messages("e3ris_db", ids=5909)
