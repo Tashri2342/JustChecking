@@ -2,28 +2,6 @@ import os
 import emoji
 import re
 from PIL import Image, ImageDraw, ImageFont
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-
-PHOTO = [
-    "https://telegra.ph/file/d2a23fbe48129a7957887.jpg",
-    "https://telegra.ph/file/ddf30888de58d77911ee1.jpg",
-    "https://telegra.ph/file/268d66cad42dc92ec65ca.jpg",
-    "https://telegra.ph/file/13a0cbbff8f429e2c59ee.jpg",
-    "https://telegra.ph/file/bdfd86195221e979e6b20.jpg",
-]
-
-Tashri = [
-    [
-        InlineKeyboardButton(text="📍𝐎𝐰𝐧𝐞𝐫📍", user_id=OWNER_ID),
-        InlineKeyboardButton(text="🍒𝐆𝐫𝐨𝐮𝐩🍒", url=f"https://t.me/{SUPPORT_CHAT}"),
-    ],
-    [
-        InlineKeyboardButton(
-            text="➕ᴀᴅᴅ ᴍᴇ ᴇʟsᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
-            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-        ),
-    ],
-]
 
 def remove_emoji(string):
     return emoji.get_emoji_regexp().sub(u'', string)
@@ -125,13 +103,3 @@ async def fake_comment(client, message):
 
     os.remove(img)
     await eris.delete()
-
-__mod_name__ = "Pornhub Fake"
-
-__help__ = """
-✘ **Commands Available :**
-> `{i}ph <some_text>`
-> `{i}fnews <text> <reply to a picture>`
-
-☆............𝙱𝚈 » [Tashri](https://t.me/Tashri2342)............☆
-"""
