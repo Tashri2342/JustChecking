@@ -1,3 +1,4 @@
+from TashriRobot import pbot
 import os
 import emoji
 import re
