@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 from pyrogram import filters
 
 def remove_emoji(string):
-    return emoji.get_emoji_regexp().sub(u'', string)
+    return regex.sub(r'\p{Emoji}', '', string)
 
 @pbot.on_message(filters.command("fnews"))
 async def fake_news(client, message):
