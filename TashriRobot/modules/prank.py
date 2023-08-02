@@ -105,3 +105,13 @@ async def fake_comment(client, message):
 
     os.remove(img)
     await eris.delete()
+
+__mod_name__ = "Pornhub Fake"
+
+__help__ = """
+✘ **Commands Available :**
+> `{i}ph <some_text>`
+> `{i}fnews <text> <reply to a picture>`
+
+☆............𝙱𝚈 » [Tashri](https://t.me/Tashri2342)............☆
+"""
