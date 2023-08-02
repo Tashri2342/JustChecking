@@ -4,9 +4,6 @@ import re
 from PIL import Image, ImageDraw, ImageFont
 
 
-from . import *
-
-
 def remove_emoji(string):
     return emoji.get_emoji_regexp().sub(u'', string)
 
