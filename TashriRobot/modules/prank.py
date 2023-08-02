@@ -2,6 +2,7 @@ import os
 import emoji
 import re
 from PIL import Image, ImageDraw, ImageFont
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 PHOTO = [
     "https://telegra.ph/file/d2a23fbe48129a7957887.jpg",
