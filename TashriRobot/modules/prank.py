@@ -4,6 +4,7 @@ import emoji
 import re
 from PIL import Image, ImageDraw, ImageFont
 from pyrogram import filters
+import regex
 
 def remove_emoji(string):
     return regex.sub(r'\p{Emoji}', '', string)
